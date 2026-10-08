@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import * as cdk from 'aws-cdk-lib/core';
-import { AwsCdkProjectStack } from '../lib/aws-cdk-project-stack';
-
+import * as cdk from "aws-cdk-lib/core";
+import { AwsCdkProjectStack } from "../lib/aws-cdk-project-stack";
+import { CdkS3Stack } from "../lib/aws-cdk-s3-stack";
 const app = new cdk.App();
 new AwsCdkProjectStack(app, 'AwsCdkProjectStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
@@ -18,3 +18,4 @@ new AwsCdkProjectStack(app, 'AwsCdkProjectStack', {
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
+new CdkS3Stack(app, "CdkS3Stack");
